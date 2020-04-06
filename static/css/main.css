@@ -1,0 +1,335 @@
+body::after {
+    content: "";
+    background: url("../img/restaurant-bg.jpg");
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#recipeImage {
+    width: 150px;
+    height: 150px;
+    background: transparent;
+}
+
+#title {
+    font-size: 24px;
+    font-style: bold;
+    margin-left: 15px;
+    color: darkgreen;
+}
+
+#locationButton {
+    box-shadow: 0px 0px 2px 0px #3dc21b;
+    background-color:#44c767;
+    border-radius:8px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:13px;
+    padding:10px 16px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+    background-color:#5cbf2a;
+}
+
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+#searchBtn {
+    background: #080808 linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial, serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #2b665e;
+}
+
+#recipeTitle {
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: x-large;
+    color: #fba704;
+}
+
+#recipeImage {
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+
+#recipeInstructions {
+    font-size: 14px;
+    font-weight: bold;
+    word-wrap: break-word;
+    width: 465px;
+}
+
+#latestSearches {
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px Arial;
+}
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+#chipButton {
+    display: inline-block;
+    padding: 0 10px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 25px;
+    background: #e8a444;
+    color: white;
+}
+
+/* Style the navbar */
+.topnav {
+    background-color: #e9e9e9;
+    overflow: hidden;
+}
+
+/* Navbar links */
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Active/current link */
+.topnav a.active {
+    background-color: #4196f3;
+    color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+    float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+.topnav input[type=password] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+    background: #ccc;
+}
+
+.topnav .dropdown .dropdown-menu {
+    z-index: 0;
+    float: none !important;
+    background-color: #d4d4d4 !important;
+    position: relative !important;
+    width: 160px !important;
+}
+
+.topnav .dropdown .dropdown-menu .dropdown-item{
+    z-index: 0;
+   float: right;
+    background-color: #d4d4d4 !important;
+    position: relative !important;
+    width: 160px !important;
+}
+
+.open>.dropdown-menu {
+    display: block;
+    margin-left: 370px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block; z-index: 3;}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 550px) {
+    .topnav .login-container {
+        float: none;
+    }
+    .topnav a, .topnav input[type=text],  .topnav input[type=password], .topnav .login-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+
+     .open>.dropdown-menu {
+        display: block;
+        margin-left: 0px;
+    }
+}

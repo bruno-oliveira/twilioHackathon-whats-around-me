@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base_template.html" %}
+
+{% block content %}
+<div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div id="alertMsg" class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h3 id="title">
+        Use your current location to find your next restaurant!
+    </h3>
+</div>
+{% endblock %}
+
+{% block body %}
+<body>
+{% if not (current_user.is_authenticated and current_user.is_active)%}
+<div>
+    <p>Welcome to the "What's-around-me" web app, that allows you to search for restaurants around you, as you explore
+    new cities and locations, always know where to eat next! To get started, Register or login to use the app.</p>
+</div>
+{% else %}
+<div>
+    <p>Welcome, {{current_user.username}} </p>
+    <p id="pos"></p>
+    <button id="locationButton" onclick="getLocation()">Find Restaurants!</button>
+    <div id="locations">
+        {{table}}
+    </div>
+</div>
+{% endif %}
+</body>
+{% endblock %}
+
+{% block scripts %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{url_for('static', filename = 'jquery-3.4.1.min.js')}}">\x3C/script>')</script>
+<script type="text/javascript" src="{{ url_for('static', filename='crudOperations.js') }}"></script>
+{% endblock %}
+
+</html>
